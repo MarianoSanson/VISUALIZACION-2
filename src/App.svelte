@@ -36,11 +36,11 @@
     const neonSound = document.getElementById("Neon_Sound");
 
     // Reproducir el sonido al cargar la página
-    neonSound.play();
+    //neonSound.play();
 
     // Temporizador para detener el sonido después de 5 segundos
     setTimeout(() => {
-      neonSound.pause();
+      //neonSound.pause();
     }, 5000);
   });
 </script>
