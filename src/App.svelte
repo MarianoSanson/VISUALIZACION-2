@@ -20,13 +20,13 @@
 
   onMount(() => {
     animate = true;
-    d3.csv("public/data/ENCUESTA.csv").then((data) => {
+    d3.csv("public/ENCUESTA.csv").then((data) => {
       console.log(data); // Verifica si los datos se están cargando correctamente
       // Mapear los datos del CSV para agregar los atributos necesarios a cada pelota
       pelotas = data.map((d) => ({
         nombreCompleto: d["Nombre"],
         genero: d.Genero,
-        lugarNacimiento: d["Lugar de nacimiento"],
+        lugarNacimiento: d["LugarDeNacimiento"],
         color: colorGenero(d.Genero), // Asignar el color correspondiente al género
         borde: Borde(d["Distancia"]),
       }));
@@ -36,11 +36,11 @@
     const neonSound = document.getElementById("Neon_Sound");
 
     // Reproducir el sonido al cargar la página
-    //neonSound.play();
+    neonSound.play();
 
     // Temporizador para detener el sonido después de 5 segundos
     setTimeout(() => {
-      //neonSound.pause();
+      neonSound.pause();
     }, 5000);
   });
 </script>
@@ -606,17 +606,6 @@
     align-self: center;
     justify-self: center;
   }
-  /* .boton {
-    padding: 10px 20px;
-    margin-left: 2%;
-    background-image: linear-gradient(to right, colorGenero("Masculino"), colorGenero("Femenino"));
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    text-decoration: none;
-  }
-  */
 
   /* Estilos de la animacion */
   .title:before {
