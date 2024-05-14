@@ -1,48 +1,282 @@
 <script>
-  import * as d3 from "d3";
-  import { onMount } from "svelte";
+  const colorFemenino = "#FE88D4";
+  const colorMasculino = "#01CFFF";
+  const colorOtro = "#FF9900";
+
+  const colorCerca = "#52FF00";
+  const colorMedio = "#FFD600";
+  const colorLejos = "#FF0000";
+
+  const persons = [
+    {
+      "Nombre Completo": "Tomás Gallo",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Tucumán, Yerba Buena",
+      "Lugar de residencia actual": "Belgrano",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Tomas Curzio",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, Zarate",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Iara Guglielmetti",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, Tandil",
+      "Lugar de residencia actual": "Nuñez",
+      Distancia: "#FFD600",
+    },
+    {
+      "Nombre Completo": "Mariano Sanson",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Tucuman, Yerba Buena",
+      "Lugar de residencia actual": "Belgrano",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Nicolas Wolodrasky",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, Tigre",
+      "Lugar de residencia actual": "Pacheco",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Carlos Ignacio Araujo",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Santa Fe, Rosario",
+      "Lugar de residencia actual": "Chacarita",
+      Distancia: "#FFD600",
+    },
+    {
+      "Nombre Completo": "Jaime Amigo",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, CABA",
+      "Lugar de residencia actual": "San Fernando",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Ivan Mondrzak",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, CABA",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: 5,
+    },
+    {
+      "Nombre Completo": "Federico Peitti",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, CABA",
+      "Lugar de residencia actual": "Coghlan",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Benjamin Toledo",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Corrientes, Corrientes",
+      "Lugar de residencia actual": "Colegiales",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Mariana Zunino",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, Mercedes",
+      "Lugar de residencia actual": "Belgrano",
+      Distancia: "#FFD600",
+    },
+    {
+      "Nombre Completo": "Emiliana Verdun",
+      Genero: "#FF9900",
+      "Lugar de nacimiento": "Mendoza, Godoy Cruz",
+      "Lugar de residencia actual": "Recoleta",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Ezequiel grinblat",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, Vicente López",
+      "Lugar de residencia actual": "Vicente López",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Manuel Milde",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Misiones, Oberá",
+      "Lugar de residencia actual": "Recoleta",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Felipe caracoix",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, Tandil",
+      "Lugar de residencia actual": "Recoleta",
+      Distancia: "#FFD600",
+    },
+    {
+      "Nombre Completo": "Estanislao Rios Zgaib",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Rio Negro, Gral Roca",
+      "Lugar de residencia actual": "Belgrano",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Maria Gimenez Costa",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires,",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Serena Marelli",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, Haedo",
+      "Lugar de residencia actual": "Haedo",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Valentina Vitetta",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, CABA",
+      "Lugar de residencia actual": "Versalles",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Joaquin Schanz",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Santa Fe, Rafaela",
+      "Lugar de residencia actual": "Villa Urquiza",
+      Distancia: "#FFD600",
+    },
+    {
+      "Nombre Completo": "Franco Setti",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Neuquén, Neuquén",
+      "Lugar de residencia actual": "Recoleta",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Juana Copello",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, Recoleta",
+      "Lugar de residencia actual": "San Isidro",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Caterina Villegas",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, Vicente López",
+      "Lugar de residencia actual": "Olivos",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Camilo Suarez",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "San Juan, San Juan",
+      "Lugar de residencia actual": "Belgrano",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Valentina Gayo",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, CABA",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Isabel Nuñez",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, Palermo",
+      "Lugar de residencia actual": "Vicente Lopez",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Tomas Ward",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, Tigre",
+      "Lugar de residencia actual": "Rincon de Milberg",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Camila Cauzzo",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, capital federal",
+      "Lugar de residencia actual": "Villa Urquiza",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Catalina Dolhare",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "Buenos Aires, CABA",
+      "Lugar de residencia actual": "Belgrano",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Tadeo Yapoudjian",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "CABA",
+      "Lugar de residencia actual": "Nuñez",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Guido David Salem",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "CABA",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Lara Barijhoff",
+      Genero: "#FE88D4",
+      "Lugar de nacimiento": "CABA",
+      "Lugar de residencia actual": "Recoleta",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Lucas Brea",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Sao Paulo, Brasil",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: "#FF0000",
+    },
+    {
+      "Nombre Completo": "Nazaret Seranusoglu",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Ciudad Autonoma de Buenos Aires",
+      "Lugar de residencia actual": "Palermo",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Gonzalo Garcia Vence",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "Buenos Aires, Capital Federal",
+      "Lugar de residencia actual": "Flores",
+      Distancia: "#52FF00",
+    },
+    {
+      "Nombre Completo": "Juan Ignacio Castore",
+      Genero: "#01CFFF",
+      "Lugar de nacimiento": "San Juan, San Juan",
+      "Lugar de residencia actual": "Recoleta",
+      Distancia: "#FF0000",
+    },
+  ];
 
   let animate = false;
   let soundEnabled = true; // Variable para controlar si el sonido está activo
-  
-  let plinko_adress = "https://proyecto2-wolodarsky-sanson.vercel.app/"
 
-  let pelotas = []; // Array donde guardaremos la data
-  let colorGenero = d3 // Escala para genero
-    .scaleOrdinal()
-    .domain(["Femenino", "Masculino", "Otro"])
-    .range(["#FE88D4", "#01CFFF", "#FF9900"]);
+  let plinko_adress = "https://proyecto2-wolodarsky-sanson.vercel.app/";
 
-  let Borde = d3
-    .scaleOrdinal()
-    .domain(["Cerca", "Medio", "Lejos"]) // Define el rango completo de valores posibles
-    .range(["#29DD0B", "#FFD600", "#FF0000"]); // Define los colores correspondientes a cada intervalo
+  // Obtener el elemento de audio
+  const neonSound = document.getElementById("Neon_Sound");
 
-  onMount(() => {
-    animate = true;
-    d3.csv("public/ENCUESTA.csv").then((data) => {
-      console.log(data); // Verifica si los datos se están cargando correctamente
-      // Mapear los datos del CSV para agregar los atributos necesarios a cada pelota
-      pelotas = data.map((d) => ({
-        nombreCompleto: d["Nombre"],
-        genero: d.Genero,
-        lugarNacimiento: d["LugarDeNacimiento"],
-        color: colorGenero(d.Genero), // Asignar el color correspondiente al género
-        borde: Borde(d["Distancia"]),
-      }));
-    });
+  // Reproducir el sonido al cargar la página
+  neonSound.play();
 
-    // Obtener el elemento de audio
-    const neonSound = document.getElementById("Neon_Sound");
-
-    // Reproducir el sonido al cargar la página
-    neonSound.play();
-
-    // Temporizador para detener el sonido después de 5 segundos
-    setTimeout(() => {
-      neonSound.pause();
-    }, 5000);
-  });
+  // Temporizador para detener el sonido después de 5 segundos
+  setTimeout(() => {
+    neonSound.pause();
+  }, 5000);
 </script>
 
 <main>
@@ -151,26 +385,25 @@
           <div class="circle_container">
             <div class="circle-color">
               <svg width="40" height="40">
-                <circle cx="20" cy="20" r="20" fill={colorGenero("Femenino")}>
+                <circle cx="20" cy="20" r="20" fill={colorFemenino}>
                 </circle></svg
               >
-              <h4 style="color: {colorGenero('Femenino')};">FEMENINO</h4>
+              <h4 style="color: {colorFemenino};">FEMENINO</h4>
             </div>
 
             <div class="circle-color">
               <svg width="40" height="40">
-                <circle cx="20" cy="20" r="20" fill={colorGenero("Masculino")}>
+                <circle cx="20" cy="20" r="20" fill={colorMasculino}>
                 </circle></svg
               >
-              <h4 style="color: {colorGenero('Masculino')};">MASCULINO</h4>
+              <h4 style="color: {colorMasculino};">MASCULINO</h4>
             </div>
 
             <div class="circle-color">
               <svg width="40" height="40">
-                <circle cx="20" cy="20" r="20" fill={colorGenero("Otro")}>
-                </circle></svg
+                <circle cx="20" cy="20" r="20" fill={colorOtro}> </circle></svg
               >
-              <h4 style="color: {colorGenero('Otro')};">OTRO</h4>
+              <h4 style="color: {colorOtro};">OTRO</h4>
             </div>
           </div>
         </div>
@@ -305,7 +538,7 @@
     <h1 id="PinkText">NUESTROS PROTAGONISTAS</h1>
 
     <div class="ParticleVis">
-      {#each pelotas as pelota}
+      {#each persons as persona}
         <div class="PersonVis">
           <div class="BallContainer">
             <svg width="50" height="50">
@@ -313,8 +546,8 @@
                 cx="25"
                 cy="25"
                 r="20"
-                fill={pelota.color}
-                stroke={pelota.borde}
+                fill={persona.Genero}
+                stroke={persona.Distancia}
                 stroke-width="5px"
               >
               </circle></svg
@@ -322,7 +555,9 @@
           </div>
 
           <div>
-            <p class="Names" style="color: #e0e0e0;">{pelota.nombreCompleto}</p>
+            <p class="Names" style="color: #e0e0e0;">
+              {persona["Nombre Completo"]}
+            </p>
           </div>
         </div>
       {/each}
@@ -602,7 +837,7 @@
     display: flex;
   }
 
-  .plinko_iframe{
+  .plinko_iframe {
     align-self: center;
     justify-self: center;
   }
