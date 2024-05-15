@@ -1,6 +1,4 @@
 <script>
-  // import * as d3 from "d3";
-  // import { onMount } from "svelte";
 
   const colorFemenino = "#FE88D4";
   const colorMasculino = "#01CFFF";
@@ -268,44 +266,6 @@
 
   
   let animate = false;
-  let soundEnabled = true; // Variable para controlar si el sonido está activo
-
-  let pelotas = []; // Array donde guardaremos la data
-  // let colorGenero = d3 // Escala para genero
-  //   .scaleOrdinal()
-  //   .domain(["Femenino", "Masculino", "Otro"])
-  //   .range(["#FE88D4", "#01CFFF", "#FF9900"]);
-
-  // let Borde = d3
-  //   .scaleOrdinal()
-  //   .domain(["Cerca", "Medio", "Lejos"]) // Define el rango completo de valores posibles
-  //   .range(["#29DD0B", "#FFD600", "#FF0000"]); // Define los colores correspondientes a cada intervalo
-
-  // onMount(() => {
-  //   animate = true;
-  //   d3.csv("public/ENCUESTA.csv").then((data) => {
-  //     console.log(data); // Verifica si los datos se están cargando correctamente
-  //     // Mapear los datos del CSV para agregar los atributos necesarios a cada pelota
-  //     pelotas = data.map((d) => ({
-  //       nombreCompleto: d["Nombre"],
-  //       genero: d.Genero,
-  //       lugarNacimiento: d["LugarDeNacimiento"],
-  //       color: colorGenero(d.Genero), // Asignar el color correspondiente al género
-  //       borde: Borde(d["Distancia"]),
-  //     }));
-  //   });
-
-  //   // Obtener el elemento de audio
-  //   const neonSound = document.getElementById("Neon_Sound");
-
-  //   // Reproducir el sonido al cargar la página
-  //   neonSound.play();
-
-  //   // Temporizador para detener el sonido después de 5 segundos
-  //   setTimeout(() => {
-  //     neonSound.pause();
-  //   }, 5000);
-  // });
 </script>
 
 <main>
