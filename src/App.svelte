@@ -595,7 +595,7 @@
 
   <section class="fourth_section">
     <hr id="division"/>
-    <h1 style="margin-left: 2%;">RESULTADO FINAL</h1>
+    <h1 style="margin: 2%;">RESULTADO FINAL</h1>
     <div class="iframe-container">
       <iframe
         src="{plinko_adress}"
