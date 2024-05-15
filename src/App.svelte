@@ -264,11 +264,11 @@
       "Distancia": "#FF0000",
     },
   ];
+  let plinko_adress = "https://proyecto2-wolodarsky-sanson.vercel.app/";
 
+  
   let animate = false;
   let soundEnabled = true; // Variable para controlar si el sonido está activo
-
-  let plinko_adress = "https://proyecto2-wolodarsky-sanson.vercel.app/";
 
   let pelotas = []; // Array donde guardaremos la data
   // let colorGenero = d3 // Escala para genero
@@ -309,7 +309,7 @@
 </script>
 
 <main>
-  <section class="first_section" id="inicio">
+  <section class="first_section">
     <div class="titulos">
       <audio
         id="Neon_Sound"
@@ -594,13 +594,15 @@
   </section>
 
   <section class="fourth_section">
-    <h1>RESULTADO FINAL</h1>
-    <iframe
+    <hr id="division"/>
+    <h1 style="margin: 2%;">RESULTADO FINAL</h1>
+      <iframe
       src={plinko_adress}
       height="85%"
       width="50%"
       title="Prueba1"
       class="plinko_iframe"
+      frameborder=0
     ></iframe>
   </section>
 </main>
@@ -620,13 +622,13 @@
     font-family: "Nunito";
   }
 
-  :global(body) {
-    background-color: #1f2229;
-  }
-
   section {
     height: 100vh;
     scroll-snap-align: start;
+  }
+
+  .first_section{
+    background-color: #1f2229;
   }
 
   .titulos {
@@ -686,7 +688,7 @@
   }
 
   .second_section {
-    background-color: #15161a;
+    background-color: #1f2229;
   }
 
   .GenderVis {
@@ -829,7 +831,7 @@
   }
 
   .third_section {
-    background-color: #3d3f45;
+    background-color: #1f2229;
   }
 
   #PinkText {
@@ -863,10 +865,11 @@
   }
 
   .fourth_section {
-    display: flex;
+    background-color: #1f2229;
   }
 
-  .plinko_iframe {
+  .plinko_iframe{
+    margin-left: 2%;
     align-self: center;
     justify-self: center;
   }
