@@ -1,5 +1,5 @@
 <script>
-
+  import { onMount } from 'svelte';
   const colorFemenino = "#FE88D4";
   const colorMasculino = "#01CFFF";
   const colorOtro = "#FF9900";
@@ -14,258 +14,276 @@
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Tucumán, Yerba Buena",
       "Lugar de residencia actual": "Belgrano",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Tomas Curzio",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, Zarate",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Iara Guglielmetti",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, Tandil",
       "Lugar de residencia actual": "Nuñez",
-      "Distancia": "#FFD600",
+      Distancia: "#FFD600",
     },
     {
       "Nombre Completo": "Mariano Sanson",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Tucuman, Yerba Buena",
       "Lugar de residencia actual": "Belgrano",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Nicolas Wolodrasky",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, Tigre",
       "Lugar de residencia actual": "Pacheco",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Carlos Ignacio Araujo",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Santa Fe, Rosario",
       "Lugar de residencia actual": "Chacarita",
-      "Distancia": "#FFD600",
+      Distancia: "#FFD600",
     },
     {
       "Nombre Completo": "Jaime Amigo",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, CABA",
       "Lugar de residencia actual": "San Fernando",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Ivan Mondrzak",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, CABA",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": 5,
+      Distancia: 5,
     },
     {
       "Nombre Completo": "Federico Peitti",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, CABA",
       "Lugar de residencia actual": "Coghlan",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Benjamin Toledo",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Corrientes, Corrientes",
       "Lugar de residencia actual": "Colegiales",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Mariana Zunino",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, Mercedes",
       "Lugar de residencia actual": "Belgrano",
-      "Distancia": "#FFD600",
+      Distancia: "#FFD600",
     },
     {
       "Nombre Completo": "Emiliana Verdun",
       Genero: "#FF9900",
       "Lugar de nacimiento": "Mendoza, Godoy Cruz",
       "Lugar de residencia actual": "Recoleta",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Ezequiel grinblat",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, Vicente López",
       "Lugar de residencia actual": "Vicente López",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Manuel Milde",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Misiones, Oberá",
       "Lugar de residencia actual": "Recoleta",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Felipe caracoix",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, Tandil",
       "Lugar de residencia actual": "Recoleta",
-      "Distancia": "#FFD600",
+      Distancia: "#FFD600",
     },
     {
       "Nombre Completo": "Estanislao Rios Zgaib",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Rio Negro, Gral Roca",
       "Lugar de residencia actual": "Belgrano",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Maria Gimenez Costa",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires,",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Serena Marelli",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, Haedo",
       "Lugar de residencia actual": "Haedo",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Valentina Vitetta",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, CABA",
       "Lugar de residencia actual": "Versalles",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Joaquin Schanz",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Santa Fe, Rafaela",
       "Lugar de residencia actual": "Villa Urquiza",
-      "Distancia": "#FFD600",
+      Distancia: "#FFD600",
     },
     {
       "Nombre Completo": "Franco Setti",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Neuquén, Neuquén",
       "Lugar de residencia actual": "Recoleta",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Juana Copello",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, Recoleta",
       "Lugar de residencia actual": "San Isidro",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Caterina Villegas",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, Vicente López",
       "Lugar de residencia actual": "Olivos",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Camilo Suarez",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "San Juan, San Juan",
       "Lugar de residencia actual": "Belgrano",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Valentina Gayo",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, CABA",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Isabel Nuñez",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, Palermo",
       "Lugar de residencia actual": "Vicente Lopez",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Tomas Ward",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, Tigre",
       "Lugar de residencia actual": "Rincon de Milberg",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Camila Cauzzo",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, capital federal",
       "Lugar de residencia actual": "Villa Urquiza",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Catalina Dolhare",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "Buenos Aires, CABA",
       "Lugar de residencia actual": "Belgrano",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Tadeo Yapoudjian",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "CABA",
       "Lugar de residencia actual": "Nuñez",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Guido David Salem",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "CABA",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Lara Barijhoff",
       Genero: "#FE88D4",
       "Lugar de nacimiento": "CABA",
       "Lugar de residencia actual": "Recoleta",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Lucas Brea",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Sao Paulo, Brasil",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
     {
       "Nombre Completo": "Nazaret Seranusoglu",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Ciudad Autonoma de Buenos Aires",
       "Lugar de residencia actual": "Palermo",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Gonzalo Garcia Vence",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "Buenos Aires, Capital Federal",
       "Lugar de residencia actual": "Flores",
-      "Distancia": "#52FF00",
+      Distancia: "#52FF00",
     },
     {
       "Nombre Completo": "Juan Ignacio Castore",
       Genero: "#01CFFF",
       "Lugar de nacimiento": "San Juan, San Juan",
       "Lugar de residencia actual": "Recoleta",
-      "Distancia": "#FF0000",
+      Distancia: "#FF0000",
     },
   ];
   let plinko_adress = "https://proyecto2-wolodarsky-sanson.vercel.app/";
 
-  
   let animate = false;
+
+  let audioElement;
+
+  onMount(() => {
+    // Obtener la referencia al elemento de audio
+    audioElement = document.getElementById('Neon_Sound');
+
+    // Reproducir el audio al cargar la página
+    if (audioElement instanceof HTMLAudioElement) {
+      audioElement.play();
+    }
+
+    // Detener el audio después de 5 segundos
+    setTimeout(() => {
+      if (audioElement instanceof HTMLAudioElement) {
+        audioElement.pause();
+      }
+    }, 5000);
+  });
 </script>
 
 <main>
@@ -554,18 +572,18 @@
   </section>
 
   <section class="fourth_section">
-    <hr id="division"/>
+    <hr id="division" />
     <h1 style="margin: 2%;">RESULTADO FINAL</h1>
     <div class="iframe-container">
       <iframe
-        src="{plinko_adress}"
+        src={plinko_adress}
         height="100%"
         width="100%"
         title="Prueba1"
         class="plinko_iframe"
         frameborder="0"
       ></iframe>
-  </div>
+    </div>
   </section>
 </main>
 
@@ -589,7 +607,7 @@
     scroll-snap-align: start;
   }
 
-  .first_section{
+  .first_section {
     background-color: #1f2229;
   }
 
@@ -836,7 +854,7 @@
     align-items: center;
     width: 100%;
     height: 85vh; /* Adjust as needed */
-}
+  }
 
   /* Estilos de la animacion */
   .title:before {
