@@ -479,14 +479,14 @@
                       cx={colIndex * 15 + 5}
                       cy={rowIndex * 15 + 5}
                       r="5"
-                      fill={colIndex % 2 === 0 ? "#E0E0E0" : "#15161a"}
+                      fill={colIndex % 2 === 0 ? "#E0E0E0" : "#1f2229"}
                     />
                   {:else}
                     <circle
                       cx={colIndex * 15 + 5}
                       cy={rowIndex * 15 + 5}
                       r="5"
-                      fill={colIndex % 2 === 0 ? "#15161a" : "#E0E0E0"}
+                      fill={colIndex % 2 === 0 ? "#1f2229" : "#E0E0E0"}
                     />
                   {/if}
                 {/each}
@@ -595,15 +595,17 @@
 
   <section class="fourth_section">
     <hr id="division"/>
-    <h1 style="margin: 2%;">RESULTADO FINAL</h1>
+    <h1 style="margin-left: 2%;">RESULTADO FINAL</h1>
+    <div class="iframe-container">
       <iframe
-      src={plinko_adress}
-      height="85%"
-      width="50%"
-      title="Prueba1"
-      class="plinko_iframe"
-      frameborder=0
-    ></iframe>
+        src="{plinko_adress}"
+        height="100%"
+        width="100%"
+        title="Prueba1"
+        class="plinko_iframe"
+        frameborder="0"
+      ></iframe>
+  </div>
   </section>
 </main>
 
@@ -827,7 +829,7 @@
     padding-top: 20px;
     position: absolute;
     right: 0;
-    padding-right: 46px;
+    padding-right: 13.8%;
   }
 
   .third_section {
@@ -868,11 +870,13 @@
     background-color: #1f2229;
   }
 
-  .plinko_iframe{
-    margin-left: 2%;
-    align-self: center;
-    justify-self: center;
-  }
+  .iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85vh; /* Adjust as needed */
+}
 
   /* Estilos de la animacion */
   .title:before {
