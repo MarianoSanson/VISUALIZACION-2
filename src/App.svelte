@@ -554,7 +554,7 @@
                 cy="25"
                 r="20"
                 fill={persona.Genero}
-                stroke={persona.Distancia}
+                stroke={`${persona.Distancia}`}
                 stroke-width="5px"
               >
               </circle></svg
